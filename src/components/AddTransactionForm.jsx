@@ -6,13 +6,13 @@ const AddTransactionForm = ({
   updateTransaction,
   setEditingTransaction,
 }) => {
-  const [form, setForm] = useState({ description: "", amount: "" });
+  const [form, setForm] = useState({ description: "", amount: "", date:"",type:"" });
 
   useEffect(() => {
     if (editingTransaction) {
       setForm(editingTransaction);
     } else {
-      setForm({ description: "", amount: "" });
+      setForm({ description: "", amount: "",date:"",type:"" });
     }
   }, [editingTransaction]);
 
@@ -24,7 +24,7 @@ const AddTransactionForm = ({
     } else {
       addTransaction({ ...form, amount: parseFloat(form.amount) });
     }
-    setForm({ description: "", amount: "" });
+    setForm({ description: "", amount: "" ,date:"",type:""});
   };
 
   return (
@@ -52,7 +52,7 @@ const AddTransactionForm = ({
       <div className="mb-2">
         <input
           type="datetime-local"
-          placeholder="Date"
+          placeholder="date"
           className="form-control"
           value={form.date}
           onChange={(e) => setForm({ ...form, date: e.target.value })}

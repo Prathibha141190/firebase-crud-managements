@@ -17,7 +17,7 @@ const TransactionList = ({ transactions, setEditingTransaction, deleteTransactio
         {transactions.map((transaction) => (
           <tr key={transaction.id}>
             <td>{transaction.description}</td>
-            <td>₹{transaction.amount.toFixed(2)}</td>
+            <td>₹{transaction.amount}</td>
             <td>{transaction.date}</td>
             <td>{transaction.type}</td>
             <td>
